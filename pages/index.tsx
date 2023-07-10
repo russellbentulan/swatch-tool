@@ -1,11 +1,9 @@
-import { Title } from "@mantine/core"
-import { css } from "@emotion/react"
+import { Container } from "@mantine/core";
 
+import { useAppStateContext } from "@/contexts/AppContext";
 
 export default function Home() {
-  return (
-    <div css={css`display: block; background: red;`}>
-      <Title>Swatch Tool</Title>
-    </div>
-  )
+  const { state, dispatch } = useAppStateContext();
+
+  return <Container>Stuff here</Container>;
 }

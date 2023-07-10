@@ -1,10 +1,8 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
-import {
-  MantineProvider,
-} from "@mantine/core";
+import { AppShell, MantineProvider, Header, Title } from "@mantine/core";
 
-export default function App(props: AppProps ) {
+export default function App(props: AppProps) {
   const { Component, pageProps } = props;
 
   return (
@@ -19,7 +17,15 @@ export default function App(props: AppProps ) {
       </Head>
 
       <MantineProvider withGlobalStyles withNormalizeCSS>
-        <Component {...pageProps} />
+        <AppShell
+          header={
+            <Header height={60} p="xs">
+              <Title>Swatch Tool</Title>
+            </Header>
+          }
+        >
+          <Component {...pageProps} />
+        </AppShell>
       </MantineProvider>
     </>
   );
